@@ -94,7 +94,13 @@ WHERE city IS NULL;
 
 -- 10. Re-create a single table of all entries as given in the ‘csv’ flat file.
 
-
+SELECT * 
+FROM customers AS c
+	INNER JOIN customer_Addresses AS ca ON c.postal_code = ca.postal_code
+    INNER JOIN orders AS o ON c.customer_id = o.customer_id
+    INNER JOIN order_products AS op ON o.order_id = op.order_id
+    INNER JOIN products AS p ON op.product_id = p.product_id
+    INNER JOIN product_categories AS pc ON p.sub_category = pc.sub_category;
 
 
 
