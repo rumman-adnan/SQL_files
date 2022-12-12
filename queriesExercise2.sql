@@ -67,49 +67,14 @@ WHERE product_name = "Xerox";
 -- First Insert data,
 -- JOIN 2 tables and update them
 
-SELECT * FROM customers;
 
+-- INSERT INTO customer_addresses (postal_code, city, state, region, country) VALUES (54000, "Lahore", "Punjab", "East", "Pakistan");
 
-UPDATE customer_addresses
-INNER JOIN customers ON customers.postal_code = customer_addresses.postal_code 
-SET postal_code = '54000', city = 'Lahore', state = 'Punjab', region = 'East', country = 'Pakistan'
-WHERE customer_id = 'KC-16540';
-
+UPDATE customers 
+SET postal_code = '54000'
 where customer_id = 'KC-16540';
 
-
-
-UPDATE customers
-SET postal_code = '54000', city = 'lahore', state = 'Punjab
-WHERE customer_id = 'KC-16540';
-
-
-
-
-
-
--- 4  Show the name of the customer whose customer ID is ‘HP-14815’.
-select * from customers where customer_id = 'HP-14815';
-
--- 5. Show all items placed under order ID ‘CA-2017-145625’.
-SELECT * FROM orders WHERE order_id = 'CA-2017-145625';
-
--- 6 Show the name, category and sub-category of the product with product ID ‘TEC-AC-10002167’.
-
-SELECT * 
-FROM products AS p
-INNER JOIN product_categories as pc
-ON p.sub_category = 
-
-
- -- 7. Show all customers belonging to the ‘consumer’ segment.
--- 8. Show a list of all sales amounting to more than $100.
-
-
-
-
-
-
-
-
-
+-- CHECK
+SELECT *
+FROM customer_addresses
+WHERE postal_code = '54000';
